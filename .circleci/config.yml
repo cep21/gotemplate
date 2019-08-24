@@ -8,4 +8,4 @@ jobs:
       - checkout
       - run: go mod download
       - run: go mod verify
-      - run: make build test lint
+      - run: make setup_ci build test lint
