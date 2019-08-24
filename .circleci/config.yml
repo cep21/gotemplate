@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.2
 jobs:
   build_1_11:
     docker:
@@ -18,7 +20,9 @@ jobs:
       - checkout
       - run: go mod download
       - run: go mod verify
-      - run: make setup_ci build test lint upload_coverage
+      - run: make setup_ci build test lint test_coverage
+      - codecov/upload:
+          file: coverage.out
 workflows:
   version: 2
   build:

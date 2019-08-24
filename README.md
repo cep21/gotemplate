@@ -5,11 +5,8 @@
 
 A short one sentence description of your code, such as Gotemplate is a template repository for GitHub go libraries.
 
-# Why
-
-Explain why someone would want to use this code.
-
-Use gotemplate to spin up a new Go library on GitHub, without making it a direct fork.
+Explain why someone would want to use this code.  Use gotemplate to spin up a new Go library on GitHub, without making
+it a direct fork.
 
 # Usage
 
