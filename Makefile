@@ -8,7 +8,7 @@ test_coverage:
 	go test -v -covermode=count -coverprofile=coverage.out ./...
 
 format:
-    gofmt -s -w ./...
+	gofmt -s -w ./..
 
 lint:
 	golangci-lint run
