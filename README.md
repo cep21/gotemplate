@@ -1,4 +1,7 @@
 # gotemplate
+[![CircleCI](https://circleci.com/gh/cep21/gotemplate.svg)](https://circleci.com/gh/cep21/gotemplate)
+[![GoDoc](https://godoc.org/github.com/cep21/gotemplate?status.svg)](https://godoc.org/github.com/cep21/gotemplate)
+[![Coverage Status](https://coveralls.io/repos/github/cep21/gotemplate/badge.svg)](https://coveralls.io/github/cep21/gotemplate)
 
 Gotemplate is a template repository for GitHub go libraries.
 
