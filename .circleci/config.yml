@@ -1,6 +1,16 @@
 version: 2
 jobs:
-  build:
+  build_1_11:
+    docker:
+      # Find these on https://hub.docker.com/r/circleci/golang/
+      - image: circleci/golang:1.11.13
+    steps:
+      - checkout
+      - run: go mod download
+      - run: go mod verify
+      # Skip upload_coverage and linting in 1.11
+      - run: make build test
+  build_1_12:
     docker:
       # Find these on https://hub.docker.com/r/circleci/golang/
       - image: circleci/golang:1.12.9
@@ -8,4 +18,4 @@ jobs:
       - checkout
       - run: go mod download
       - run: go mod verify
-      - run: make setup_ci build test lint
+      - run: make setup_ci build test lint upload_coverage

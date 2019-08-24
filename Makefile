@@ -7,6 +7,9 @@ test:
 test_coverage:
 	go test -v -covermode=count -coverprofile=coverage.out ./...
 
+upload_coverage: test_coverage
+	goveralls -coverprofile coverage.out
+
 format:
 	gofmt -s -w ./..
 
