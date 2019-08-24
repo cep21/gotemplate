@@ -19,3 +19,9 @@ jobs:
       - run: go mod download
       - run: go mod verify
       - run: make setup_ci build test lint upload_coverage
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build_1_11
+      - build_1_12
