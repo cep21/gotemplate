@@ -9,6 +9,7 @@ test_coverage:
 
 format:
 	gofmt -s -w ./..
+	find . -iname '*.go' -print0 | xargs -0 goimports -w
 
 lint:
 	golangci-lint run
