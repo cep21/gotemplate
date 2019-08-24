@@ -1,8 +1,11 @@
 package gotemplate_test
 
-import "github.com/cep21/gotemplate"
+import (
+	"fmt"
+	"github.com/cep21/gotemplate"
+)
 
 func ExampleRemoveMe() {
-	gotemplate.RemoveMe()
-	// Output:
+	fmt.Println(gotemplate.RemoveMe("hello", "world"))
+	// Output: helloworld
 }
