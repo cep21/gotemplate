@@ -1,0 +1,5 @@
+package gotemplate
+
+func removeMe() {
+
+}
