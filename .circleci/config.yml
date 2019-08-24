@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # Find these on https://hub.docker.com/r/circleci/golang/
+      - image: circleci/golang:1.12.9
+    steps:
+      - checkout
+      - run: go mod download
+      - run: go mod verify
+      - run: make test lint
