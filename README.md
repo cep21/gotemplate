@@ -92,6 +92,12 @@ which are never compiled).  Testable examples also integrate well with godoc and
 Package level documentation is useful for godoc users: which is the standard documentation format for Go.  Package level
 documentation is generally placed in a separate [doc.go](./doc.go) file.
 
+## tools.go
+
+A [tools.go](./tools.go) file is a nice way to lock down versions of go binaries that you later download with `go get`.
+Some more information about this approach on [GitHub](https://github.com/golang/go/issues/25922) and the primary
+wiki page for [go modules](https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module).
+
 ## Visible code coverage
 
 Test code coverage of some amount can communicate a commitment to having working code. Both
