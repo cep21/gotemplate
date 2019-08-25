@@ -54,7 +54,25 @@ patent stuff inside it.  Another reasonable choice is [MIT](https://tldrlegal.co
 
 ## README
 
-A Readme file is the defacto way to communicate "first read" information about a project.
+A Readme file is the first thing people see when they visit your page and should convince someone to want to use your
+code and be a launching pad to other tasks.  When your project is a huge hit, you can move this somewhere else, but for
+small projects a README should be enough for all information you need.
+
+## Makefile
+
+A makefile is a concise way to communicate "what" common terms like "linting" or "testing" mean exactly.  For example,
+testing isn't just "go test", it's "go test on all files with the -race detector". Similarly, linting isn't just
+"running go vet", it may be "running golangci-lint with some flags".  Makefile targets should be common software terms
+like "build" or "test", that contain specific commands for what that term means.
+
+## Continuous testing
+
+CircleCI allows you to run tests and static checks on each pull request and commit to make sure your code stays working.
+Another popular choice is [TravisCI](https://travis-ci.org).  Travis is a fine choice: I just prefer CircleCI.  I've
+talked about why on a previous post
+[The 13 Things That Make a Good Build System](https://www.signalfx.com/blog/the-13-things-that-make-a-good-build-system/).
+An important bonus for me is that CircleCI is free for private git repositories, which lets me test out code before I'm
+ready to make it public.
 
 # License
 
