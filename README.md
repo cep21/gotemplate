@@ -2,18 +2,17 @@
 [![CircleCI](https://circleci.com/gh/cep21/gotemplate.svg)](https://circleci.com/gh/cep21/gotemplate)
 [![GoDoc](https://godoc.org/github.com/cep21/gotemplate?status.svg)](https://godoc.org/github.com/cep21/gotemplate)
 [![codecov](https://codecov.io/gh/cep21/gotemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/cep21/gotemplate)
-![GitHub](https://img.shields.io/github/license/cep21/gotemplate)
 
 A short one sentence description of your code, such as Gotemplate is a template repository for GitHub go libraries.
 
 Explain why (not how) someone would want to use this code.  This should be a bit of a sales pitch.  Use gotemplate to
 spin up a new Go library on GitHub, without making it a direct fork.  It sets you up with the minimal parts you'll want
-to ensure your code starts and stays at a high quality.  You can read more about template repositories.
+to ensure your code starts and stays at a high quality.  You can read more about template repositories
 [from GitHub](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
 
 This setup includes:
-* Continuous testing with (CircleCI)[https://circleci.com/] on multiple go versions.
-* Static analysis checking with (golangci-lint)[https://github.com/golangci/golangci-lint].
+* Continuous testing with [https://circleci.com/](CircleCI) on multiple go versions.
+* Static analysis checking with [https://github.com/golangci/golangci-lint](golangci-lint).
 * Setup [go modules](https://github.com/golang/go/wiki/Modules).
 * Widely usable source license Apache 2.0
 * [godoc](https://godoc.org) source code documentation
@@ -32,7 +31,20 @@ Include usage examples.  These can often be direct copies from your example_test
     }
 ```
 
-To use gotemplate, follow the instructions on [github](https://help.github.com/en/articles/creating-a-template-repository).
+To use gotemplate:
+1. Follow the instructions on [GitHub](https://help.github.com/en/articles/creating-a-template-repository) when you
+   create your repository
+2. Sign up with [CircleCI](https://circleci.com) and [codecov](https://codecov.io).
+3. Search/replace the string "cep21/gotemplate" with "{USERNAME}/{REPO_NAME}"
+4. Take out the parts of the README that don't make sense.  Keep the sections you want.
+5. Push your repository and watch it build.
+
+# Design Rational
+
+Talk about why you wrote this code the way you did.  A lot of this may focus on what you decided **not** to do.
+For the things you did do, explain why it's important.  This may serve as a mini-FAQ while your project is small.
+Move this out to something more heavy weight like [GitHub Pages](https://pages.github.com) if your project gets very
+complex.
 
 # License
 
