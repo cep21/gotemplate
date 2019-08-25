@@ -6,22 +6,40 @@ jobs:
       - image: circleci/golang:1.11.13
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - go-mod-v1-sum-{{ checksum "go.sum" }}
+            - go-mod-v1-sum-
       - run: go mod download
       - run: go mod verify
       # Skip upload_coverage and linting in 1.11.  Static analysis can sometimes ask for different results in different
       # versions of Go, so we just run it on the latest version.
       - run: make build test
+      - save_cache:
+          key:
+            - go-mod-v1-sum-{{ checksum "go.sum" }}
+          paths:
+            - /go/pkg/mod
   build_1_12:
     docker:
       # Find these on https://hub.docker.com/r/circleci/golang/
       - image: circleci/golang:1.12.9
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - go-mod-v1-sum-{{ checksum "go.sum" }}
+            - go-mod-v1-sum-
       - run: go mod download
       - run: go mod verify
       - run: make build test
       - run: make setup_ci lint
       - run: make codecov_coverage
+      - save_cache:
+          key:
+            - go-mod-v1-sum-{{ checksum "go.sum" }}
+          paths:
+            - /go/pkg/mod
 workflows:
   version: 2
   build:

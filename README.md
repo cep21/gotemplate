@@ -105,8 +105,8 @@ around this, I instead download directly from
 
 ## Go modules
 
-Modules are the now standard way to manage dependencies of Go code.  If the gotemplate project had dependencies, I would
-also check in a go.sum file.  The CI process runs both `go mod download` and `go mod verify` to check your dependencies.
+Modules are the now standard way to manage dependencies of Go code.  The CI process runs both `go mod download` and
+`go mod verify` to check your dependencies.
 The build process uses `-mod=readonly` to ensure your CI checks the `go.mod` file for missing dependencies.
 
 # License
