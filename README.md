@@ -65,7 +65,7 @@ somewhere else, but for small projects a README should be enough for all informa
 A [Makefile](./Makefile) is a concise way to communicate what common terms like "linting" or "testing" mean exactly.  For example,
 testing isn't just "go test", it's "go test on all files with the -race detector". Similarly, linting isn't just
 "running go vet", it may be "running golangci-lint with some flags".  Makefile targets should be common software terms
-like "build" or "test", that contain specific commands for what that term means.
+like "build" or "test" that contain specific commands for what that term means.
 
 ## Continuous testing
 
@@ -83,6 +83,9 @@ The best for Go right now is [Golangci-lint](https://github.com/golangci/golangc
 many linters, reusing source code parsing between linters, using semantic versioning, and configuration from a yml file
 it allows easy, precise, reproducible, and comprehensive static analysis.
 
+The linters configured in [.golangci.yml](./.golangci.yml) seem to be reasonable defaults.  Feel free to add or remove
+them as you want.
+
 ## Testable examples
 
 I really like [testable examples](./gotemplate_example_test.go) as code documentation that verifies itself as correct (unlike actual documentation blocks
@@ -95,7 +98,7 @@ documentation is generally placed in a separate [doc.go](./doc.go) file.
 
 ## tools.go
 
-A [tools.go](./tools.go) file is a nice way to lock down versions of go binaries that you later download with `go get`.
+A [tools.go](./tools.go) file is a nice way to lock down versions of go binaries that you later download with `go install`.
 Some more information about this approach on [GitHub](https://github.com/golang/go/issues/25922) and the primary
 wiki page for [go modules](https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module).
 
@@ -117,6 +120,9 @@ If you're generating artifacts like coverage profiles, you'll want to add them t
 [Modules](./go.mod) are the now standard way to manage dependencies of Go code.  The CI process runs both `go mod download` and
 `go mod verify` to check your dependencies.
 The build process uses `-mod=readonly` to ensure your CI checks the `go.mod` file for missing dependencies.
+
+THe [go.sum](./go.sum) file is checked into the repository to verify your downloaded dependencies continue to match and
+aren't changed from under you.
 
 # License
 
