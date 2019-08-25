@@ -99,12 +99,9 @@ Testing code coverage of some amount can communicate a commitment to having work
 are fine.  I've defaulted to codecov since it integrates well with CircleCI and did not require a separate step of
 uploading a token to your CI's environment: making it easier for new developers to just get started.
 
-Codecov's pattern of downloading and executing a bash script from the internet freaks me out big time.  I can't in
-good conscious recommend that flow.  Instead of using https://codecov.io/bash to download the script, which could
-be hacked, I directly reference
-[a SHA1 version](https://raw.githubusercontent.com/codecov/codecov-bash/1044b7a243e0ea0c05ed43c2acd8b7bb7cef340c/codecov)
-of the script with.  This does more to make upgrading a purposeful process and mitigates the damage of bad actors by
-letting you wait and see if the rest of the world got hacked before you upgrade versions. 
+Codecov usually recommends downloading and executing a shell command from an unversioned URL.  To mitigate issues
+around this, I instead download directly from
+[a SHA1 version](https://raw.githubusercontent.com/codecov/codecov-bash/1044b7a243e0ea0c05ed43c2acd8b7bb7cef340c/codecov).
 
 ## Go modules
 
