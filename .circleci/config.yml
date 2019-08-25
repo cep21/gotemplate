@@ -1,7 +1,4 @@
 version: 2.1
-# This orb is used by the codecov/upload step
-orbs:
-  codecov: codecov/codecov@1.0.5
 jobs:
   build_1_11:
     docker:
@@ -23,9 +20,7 @@ jobs:
       - run: go mod download
       - run: go mod verify
       - run: make build test setup_ci lint test_coverage
-      # This step requires the codecov orb
-      - codecov/upload:
-          file: coverage.out
+      - run: bash <(curl -s https://codecov.io/bash) -s coverage
 workflows:
   version: 2
   build:

@@ -23,7 +23,8 @@ This setup includes:
 
 # Usage
 
-Include usage examples.  These can often be direct copies from your example_test.go file
+Include usage examples.  These can often be links or direct copies from your
+[example test file](./gotemplate_example_test.go).
 
 ```go
     func ExampleRemoveMe() {
