@@ -60,19 +60,49 @@ small projects a README should be enough for all information you need.
 
 ## Makefile
 
-A makefile is a concise way to communicate "what" common terms like "linting" or "testing" mean exactly.  For example,
+A makefile is a concise way to communicate what common terms like "linting" or "testing" mean exactly.  For example,
 testing isn't just "go test", it's "go test on all files with the -race detector". Similarly, linting isn't just
 "running go vet", it may be "running golangci-lint with some flags".  Makefile targets should be common software terms
 like "build" or "test", that contain specific commands for what that term means.
 
 ## Continuous testing
 
-CircleCI allows you to run tests and static checks on each pull request and commit to make sure your code stays working.
+CircleCI allows you to run  checks on requests and commits to make sure your code stays working.
 Another popular choice is [TravisCI](https://travis-ci.org).  Travis is a fine choice: I just prefer CircleCI.  I've
 talked about why on a previous post
 [The 13 Things That Make a Good Build System](https://www.signalfx.com/blog/the-13-things-that-make-a-good-build-system/).
 An important bonus for me is that CircleCI is free for private git repositories, which lets me test out code before I'm
 ready to make it public.
+
+## Static analysis
+
+Automatic detection of software bugs is very powerful and can help push new code above a minimum bar of quality.
+The best for Go right now is [Golangci-lint](https://github.com/golangci/golangci-lint).  By combining the output of
+many linters, reusing source code parsing between linters, using semantic versioning, and configuration from a yml file
+it allows easy, precise, reproducible, and comprehensive static analysis.
+
+## Testable examples
+
+I really like testable examples as code documentation that verifies itself as correct (unlike actual documentation blocks
+which are never compiled).  Testable examples also integrate well with godoc and most IDE help dialogs.
+
+## doc.go
+
+Package level documentation is useful for godoc users: which is the standard documentation format for Go.  Package level
+documentation is generally placed in a separate [doc.go](./doc.go) file.
+
+## Visible code coverage
+
+Testing code coverage of some amount can communicate a commitment to having working code. Both
+[codecov](https://codecov.io) and [coveralls](https://docs.coveralls.io/go)
+are fine.  I've defaulted to codecov since it integrates well with CircleCI and did not require a separate step of
+uploading a token to your CI's environment: making it easier for new developers to just get started.
+
+## Go modules
+
+Modules are the now standard way to manage dependencies of Go code.  If the gotemplate project had dependencies, I would
+also check in a go.sum file.  The CI process runs both `go mod download` and `go mod verify` to check your dependencies.
+The build process uses `-mod=readonly` to ensure your CI checks the `go.mod` file for missing dependencies.
 
 # License
 

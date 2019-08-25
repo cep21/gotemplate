@@ -1,4 +1,5 @@
 version: 2.1
+# This orb is used by the codecov/upload step
 orbs:
   codecov: codecov/codecov@1.0.5
 jobs:
@@ -10,7 +11,8 @@ jobs:
       - checkout
       - run: go mod download
       - run: go mod verify
-      # Skip upload_coverage and linting in 1.11
+      # Skip upload_coverage and linting in 1.11.  Static analysis can sometimes ask for different results in different
+      # versions of Go, so we just run it on the latest version.
       - run: make build test
   build_1_12:
     docker:
@@ -20,7 +22,8 @@ jobs:
       - checkout
       - run: go mod download
       - run: go mod verify
-      - run: make setup_ci build test lint test_coverage
+      - run: make build test setup_ci lint test_coverage
+      # This step requires the codecov orb
       - codecov/upload:
           file: coverage.out
 workflows:
