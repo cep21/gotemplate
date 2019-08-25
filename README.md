@@ -49,7 +49,7 @@ complex.
 
 ## License file
 
-A [License](./LICENSE.txt) file is mandatory for open source projects.  Which you use is up to you. Most companies I've seen
+A [license](./LICENSE.txt) file is mandatory for open source projects.  Which you use is up to you. Most companies I've seen
 appreciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) for the patent clauses.
 Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
 
