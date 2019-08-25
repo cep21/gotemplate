@@ -6,7 +6,8 @@
 A short one sentence description of your code, such as Gotemplate is a template repository for GitHub go libraries.
 
 Explain why someone would want to use this code.  Use gotemplate to spin up a new Go library on GitHub, without making
-it a direct fork.
+it a direct fork.  You can read more about template repositories
+[from GitHub](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
 
 # Usage
 
@@ -14,11 +15,15 @@ Include usage examples.  These can often be direct copies from your example_test
 
 ```go
     func ExampleRemoveMe() {
-    	gotemplate.RemoveMe()
+    	fmt.Println(gotemplate.RemoveMe("hello", "world"))
     }
 ```
 
 To use gotemplate, follow the instructions on [github](https://help.github.com/en/articles/creating-a-template-repository).
+
+# License
+
+This library is licensed under the Apache 2.0 License.
 
 # Contributing
 
