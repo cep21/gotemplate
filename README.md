@@ -3,7 +3,8 @@
 [![GoDoc](https://godoc.org/github.com/cep21/gotemplate?status.svg)](https://godoc.org/github.com/cep21/gotemplate)
 [![codecov](https://codecov.io/gh/cep21/gotemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/cep21/gotemplate)
 
-A short one sentence description of your code, such as Gotemplate is a template repository for GitHub go libraries.
+A short one sentence description of your code, such as Gotemplate is a minimal template repository for well constructed
+GitHub go libraries.
 
 Explain why (not how) someone would want to use this code.  This should be a bit of a sales pitch.  Use gotemplate to
 spin up a new Go library on GitHub, without making it a direct fork.  It sets you up with the minimal parts you'll want
