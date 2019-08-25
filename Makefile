@@ -35,7 +35,6 @@ endif
 	mv gotemplate.go $(REPO).go
 	mv gotemplate_example_test.go $(REPO)_example_test.go
 	mv gotemplate_test.go $(REPO)_test.go
-	echo "CircleCI URL: https://circleci.com/add-projects/gh/$(OWNER)"
-	echo "Codecov URL:  https://codecov.io/gh/$(OWNER)/+"
-	rm go.sum
-	go test -v ./...
+	go test ./...
+	@echo "CircleCI URL: https://circleci.com/add-projects/gh/$(OWNER)"
+	@echo "Codecov URL:  https://codecov.io/gh/$(OWNER)/+"
