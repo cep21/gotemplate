@@ -9,7 +9,7 @@ test_coverage:
 
 # Notice how I directly curl a SHA1 version of codecov-bash
 codecov_coverage: test_coverage
-	bash <(curl -s https://raw.githubusercontent.com/codecov/codecov-bash/1044b7a243e0ea0c05ed43c2acd8b7bb7cef340c/codecov) -s coverage -f "coverage.out"  -Z
+	curl -s https://raw.githubusercontent.com/codecov/codecov-bash/1044b7a243e0ea0c05ed43c2acd8b7bb7cef340c/codecov | bash -s -- -f coverage.out  -Z
 
 format:
 	gofmt -s -w ./..
