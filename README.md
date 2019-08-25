@@ -27,12 +27,13 @@ This setup includes:
 Include usage examples.  These can often be links or direct copies from your
 [example test file](./gotemplate_example_test.go).
 
+<!--
 ```go
     func ExampleRemoveMe() {
     	fmt.Println(gotemplate.RemoveMe("hello", "world"))
     }
 ```
-
+-->
 To use gotemplate:
 1. Visit the generation URL for gotemplate at https://github.com/cep21/gotemplate/generate and create your repository.
 2. Sign up with [CircleCI](https://circleci.com) and [codecov](https://codecov.io).
