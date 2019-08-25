@@ -16,8 +16,7 @@ jobs:
       # versions of Go, so we just run it on the latest version.
       - run: make build test
       - save_cache:
-          key:
-            - go-mod-v1-sum-{{ checksum "go.sum" }}
+          key: go-mod-v1-sum-{{ checksum "go.sum" }}
           paths:
             - "/go/pkg/mod"
   build_1_12:
@@ -36,8 +35,7 @@ jobs:
       - run: make setup_ci lint
       - run: make codecov_coverage
       - save_cache:
-          key:
-            - go-mod-v1-sum-{{ checksum "go.sum" }}
+          key: go-mod-v1-sum-{{ checksum "go.sum" }}
           paths:
             - "/go/pkg/mod"
 workflows:
