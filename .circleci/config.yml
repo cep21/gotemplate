@@ -19,7 +19,7 @@ jobs:
           key:
             - go-mod-v1-sum-{{ checksum "go.sum" }}
           paths:
-            - /go/pkg/mod
+            - "/go/pkg/mod"
   build_1_12:
     docker:
       # Find these on https://hub.docker.com/r/circleci/golang/
@@ -39,7 +39,7 @@ jobs:
           key:
             - go-mod-v1-sum-{{ checksum "go.sum" }}
           paths:
-            - /go/pkg/mod
+            - "/go/pkg/mod"
 workflows:
   version: 2
   build:
