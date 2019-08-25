@@ -46,6 +46,16 @@ For the things you did do, explain why it's important.  This may serve as a mini
 Move this out to something more heavy weight like [GitHub Pages](https://pages.github.com) if your project gets very
 complex.
 
+## License file
+
+A License file is manditory for open source projects.  Which you use is up to you, but most companies I've seen
+appriciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) the most explicitly for the
+patent stuff inside it.  Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
+
+## README
+
+A Readme file is the defacto way to communicate "first read" information about a project.
+
 # License
 
 This library is licensed under the Apache 2.0 License.
