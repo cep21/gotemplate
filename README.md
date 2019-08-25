@@ -49,26 +49,26 @@ complex.
 
 ## License file
 
-A License file is mandatory for open source projects.  Which you use is up to you. Most companies I've seen
+A [License](./LICENSE.txt) file is mandatory for open source projects.  Which you use is up to you. Most companies I've seen
 appreciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) for the patent clauses.
 Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
 
 ## README
 
-A Readme file is the first thing people see when they visit your code repository and should convince someone to want to
+A [readme](./README.md) file is the first thing people see when they visit your code repository and should convince someone to want to
 use your code and be a launching pad to other tasks.  When your project is a huge hit, you can move this
 somewhere else, but for small projects a README should be enough for all information you need.
 
 ## Makefile
 
-A makefile is a concise way to communicate what common terms like "linting" or "testing" mean exactly.  For example,
+A [Makefile](./Makefile) is a concise way to communicate what common terms like "linting" or "testing" mean exactly.  For example,
 testing isn't just "go test", it's "go test on all files with the -race detector". Similarly, linting isn't just
 "running go vet", it may be "running golangci-lint with some flags".  Makefile targets should be common software terms
 like "build" or "test", that contain specific commands for what that term means.
 
 ## Continuous testing
 
-CircleCI allows you to run checks on requests and commits to make sure your code stays working.
+[CircleCI](./.circleci) allows you to run checks on requests and commits to make sure your code stays working.
 Another popular choice is [TravisCI](https://travis-ci.org).  Travis is a fine choice: I just prefer CircleCI.  I've
 talked about why on a previous post
 [The 13 Things That Make a Good Build System](https://www.signalfx.com/blog/the-13-things-that-make-a-good-build-system/).
@@ -84,7 +84,7 @@ it allows easy, precise, reproducible, and comprehensive static analysis.
 
 ## Testable examples
 
-I really like [testable examples](https://blog.golang.org/examples) as code documentation that verifies itself as correct (unlike actual documentation blocks
+I really like [testable examples](./gotemplate_example_test.go) as code documentation that verifies itself as correct (unlike actual documentation blocks
 which are never compiled).  Testable examples also integrate well with godoc and most IDE help dialogs.
 
 ## doc.go
@@ -113,7 +113,7 @@ If you're generating artifacts like coverage profiles, you'll want to add them t
 
 ## Go modules
 
-Modules are the now standard way to manage dependencies of Go code.  The CI process runs both `go mod download` and
+[Modules](./go.mod) are the now standard way to manage dependencies of Go code.  The CI process runs both `go mod download` and
 `go mod verify` to check your dependencies.
 The build process uses `-mod=readonly` to ensure your CI checks the `go.mod` file for missing dependencies.
 
