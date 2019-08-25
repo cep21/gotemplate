@@ -21,7 +21,7 @@ jobs:
       - run: go mod verify
       - run: make build test
       - run: make setup_ci lint
-      - run: make test_coverage
+      - run: make codecov_coverage
 workflows:
   version: 2
   build:
