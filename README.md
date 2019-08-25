@@ -39,7 +39,9 @@ To use gotemplate:
 2. Sign in with GitHub for [CircleCI](https://circleci.com) and [codecov](https://codecov.io).  Afterwards, enable each
 for your repository.  Direct links to enable look something like this for [codecov](https://codecov.io/gh/cep21/+) and
 [CircleCI](https://circleci.com/add-projects/gh/cep21), but for your user name.
-3. Rename cep21/gotemplate to your repository.  There is a helper in the make file for this: `make setup_repo`.
+3. Rename cep21/gotemplate to your repository.  There is a makefile helper this, which expects an OWNER
+ and REPO parameter.  For example, if you were to setup the github repository github.com/example/athing you would run
+ `make setup_repo OWNER=example REPO=athing`.
 4. Take out the parts of the README that don't make sense.  Keep the sections you want.
 5. Push your repository and watch it build.
 

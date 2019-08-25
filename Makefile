@@ -30,8 +30,8 @@ endif
 ifndef REPO
 	$(error REPO is undefined)
 endif
-	git grep -l 'cep21/gotemplate' | xargs sed -i "" "s#cep21/gotemplate#$(OWNER)/$(REPO)#g"
-	git grep -l 'gotemplate' | xargs sed -i "" "s#gotemplate#$(REPO)#g"
+	git grep -l 'cep21/gotemplate' | xargs perl -i -pe"s#cep21/gotemplate#$(OWNER)/$(REPO)#g"
+	git grep -l 'gotemplate' | xargs perl -i -pe"s#gotemplate#$(REPO)#g"
 	mv gotemplate.go $(REPO).go
 	mv gotemplate_example_test.go $(REPO)_example_test.go
 	mv gotemplate_test.go $(REPO)_test.go
