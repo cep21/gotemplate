@@ -49,7 +49,7 @@ complex.
 
 ## License file
 
-A License file is manditory for open source projects.  Which you use is up to you. Most companies I've seen
+A License file is mandatory for open source projects.  Which you use is up to you. Most companies I've seen
 appreciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) for the patent clauses.
 Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
 
@@ -84,7 +84,7 @@ it allows easy, precise, reproducible, and comprehensive static analysis.
 
 ## Testable examples
 
-I really like testable examples as code documentation that verifies itself as correct (unlike actual documentation blocks
+I really like [testable examples](https://blog.golang.org/examples) as code documentation that verifies itself as correct (unlike actual documentation blocks
 which are never compiled).  Testable examples also integrate well with godoc and most IDE help dialogs.
 
 ## doc.go
@@ -108,6 +108,8 @@ uploading a token to your CI's environment: making it easier for new developers 
 Codecov usually recommends downloading and executing a shell command from an unversioned URL.  To mitigate issues
 around this, I instead download directly from
 [a SHA1 version](https://raw.githubusercontent.com/codecov/codecov-bash/1044b7a243e0ea0c05ed43c2acd8b7bb7cef340c/codecov).
+
+If you're generating artifacts like coverage profiles, you'll want to add them to your [.gitignore](./.gitignore) file as well.
 
 ## Go modules
 
