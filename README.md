@@ -34,7 +34,7 @@ Include usage examples.  These can often be links or direct copies from your
 ```
 
 To use gotemplate:
-1. Visit the generation URL for gotemplate at https://github.com/cep21/gotemplate/generate.
+1. Visit the generation URL for gotemplate at https://github.com/cep21/gotemplate/generate and create your repository.
 2. Sign up with [CircleCI](https://circleci.com) and [codecov](https://codecov.io).
 3. Search/replace the string "cep21/gotemplate" with "{USERNAME}/{REPO_NAME}"
 4. Take out the parts of the README that don't make sense.  Keep the sections you want.
