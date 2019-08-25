@@ -98,7 +98,9 @@ which are never compiled).  Testable examples also integrate well with godoc and
 ## doc.go
 
 Package level documentation is useful for godoc users: which is the standard documentation format for Go.  Package level
-documentation is generally placed in a separate [doc.go](./doc.go) file.
+documentation is generally placed in a separate [doc.go](./doc.go) file. Write this documentation assuming people are
+already sold on using your code and just want broader context on how to use the library correctly.  Focus less on
+explicit usage and more on overall API correctness.
 
 ## tools.go
 
@@ -125,7 +127,7 @@ If you're generating artifacts like coverage profiles, you'll want to add them t
 `go mod verify` to check your dependencies.
 The build process uses `-mod=readonly` to ensure your CI checks the `go.mod` file for missing dependencies.
 
-THe [go.sum](./go.sum) file is checked into the repository to verify your downloaded dependencies continue to match and
+The [go.sum](./go.sum) file is checked into the repository to verify your downloaded dependencies continue to match and
 aren't changed from under you.
 
 # License
