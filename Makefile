@@ -20,4 +20,4 @@ lint:
 
 # The exact version of CI tools should be specified in your go.mod file and referenced inside your tools.go file
 setup_ci:
-	go get -mod=readonly github.com/golangci/golangci-lint/cmd/golangci-lint
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint
