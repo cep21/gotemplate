@@ -49,15 +49,15 @@ complex.
 
 ## License file
 
-A License file is manditory for open source projects.  Which you use is up to you, but most companies I've seen
-appriciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) the most explicitly for the
-patent stuff inside it.  Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
+A License file is manditory for open source projects.  Which you use is up to you. Most companies I've seen
+appreciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) for the patent clauses.
+Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
 
 ## README
 
-A Readme file is the first thing people see when they visit your page and should convince someone to want to use your
-code and be a launching pad to other tasks.  When your project is a huge hit, you can move this somewhere else, but for
-small projects a README should be enough for all information you need.
+A Readme file is the first thing people see when they visit your code repository and should convince someone to want to
+use your code and be a launching pad to other tasks.  When your project is a huge hit, you can move this
+somewhere else, but for small projects a README should be enough for all information you need.
 
 ## Makefile
 
@@ -68,7 +68,7 @@ like "build" or "test", that contain specific commands for what that term means.
 
 ## Continuous testing
 
-CircleCI allows you to run  checks on requests and commits to make sure your code stays working.
+CircleCI allows you to run checks on requests and commits to make sure your code stays working.
 Another popular choice is [TravisCI](https://travis-ci.org).  Travis is a fine choice: I just prefer CircleCI.  I've
 talked about why on a previous post
 [The 13 Things That Make a Good Build System](https://www.signalfx.com/blog/the-13-things-that-make-a-good-build-system/).
@@ -94,7 +94,7 @@ documentation is generally placed in a separate [doc.go](./doc.go) file.
 
 ## Visible code coverage
 
-Testing code coverage of some amount can communicate a commitment to having working code. Both
+Test code coverage of some amount can communicate a commitment to having working code. Both
 [codecov](https://codecov.io) and [coveralls](https://docs.coveralls.io/go)
 are fine.  I've defaulted to codecov since it integrates well with CircleCI and did not require a separate step of
 uploading a token to your CI's environment: making it easier for new developers to just get started.
@@ -120,4 +120,5 @@ need it.
 
 Contributions welcome!  Submit a pull request on github and make sure your code passes `make lint test`.  For
 large changes, I strongly recommend [creating an issue](https://github.com/cep21/gotemplate/issues) on GitHub first to
-confirm your change will be accepted before writing a lot of code.
+confirm your change will be accepted before writing a lot of code.  GitHub issues are also recommended, at your discretion,
+for smaller changes or questions.
