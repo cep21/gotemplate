@@ -11,8 +11,8 @@ to ensure your code starts and stays at a high quality.  You can read more about
 [from GitHub](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
 
 This setup includes:
-* Continuous testing with [https://circleci.com/](CircleCI) on multiple go versions.
-* Static analysis checking with [https://github.com/golangci/golangci-lint](golangci-lint).
+* Continuous testing with [CircleCI](https://circleci.com/) on multiple go versions.
+* Static analysis checking with [golangci-lint](https://github.com/golangci/golangci-lint).
 * Setup [go modules](https://github.com/golang/go/wiki/Modules).
 * Widely usable source license Apache 2.0
 * [godoc](https://godoc.org) source code documentation
