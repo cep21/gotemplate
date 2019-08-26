@@ -130,10 +130,6 @@ The build process uses `-mod=readonly` to ensure your CI checks the `go.mod` fil
 The [go.sum](./go.sum) file is checked into the repository to verify your downloaded dependencies continue to match and
 aren't changed from under you.
 
-# License
-
-This library is licensed under the Apache 2.0 License.
-
 # Contributing
 
 Tell people how they can contribute.  Start with something simple and create a `CONTRIBUTING.md` file if you really
@@ -143,3 +139,7 @@ Contributions welcome!  Submit a pull request on github and make sure your code 
 large changes, I strongly recommend [creating an issue](https://github.com/cep21/gotemplate/issues) on GitHub first to
 confirm your change will be accepted before writing a lot of code.  GitHub issues are also recommended, at your discretion,
 for smaller changes or questions.
+
+# License
+
+This library is licensed under the Apache 2.0 License.
