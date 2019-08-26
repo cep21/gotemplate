@@ -54,22 +54,22 @@ complex.
 
 ## License file
 
-A [license](./LICENSE.txt) file is mandatory for open source projects.  Which you use is up to you. Most companies I've seen
-appreciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) for the patent clauses.
+A [license](./LICENSE.txt) file is mandatory for open source projects.  Which you use is up to you. Most companies I've
+seen appreciate [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) for the patent clauses.
 Another reasonable choice is [MIT](https://tldrlegal.com/license/mit-license).
 
 ## README
 
-A [readme](./README.md) file is the first thing people see when they visit your code repository and should convince someone to want to
-use your code and be a launching pad to other tasks.  When your project is a huge hit, you can move this
-somewhere else, but for small projects a README should be enough for all information you need.
+A [readme](./README.md) file is the first thing people see when they visit your code repository and should convince
+someone to want to use your code and be a launching pad to other tasks.  When your project is a huge hit, you can move
+this somewhere else, but for small projects a README should be enough for all information you need.
 
 ## Makefile
 
-A [Makefile](./Makefile) is a concise way to communicate what common terms like "linting" or "testing" mean exactly.  For example,
-testing isn't just "go test", it's "go test on all files with the -race detector". Similarly, linting isn't just
-"running go vet", it may be "running golangci-lint with some flags".  Makefile targets should be common software terms
-like "build" or "test" that contain specific commands for what that term means.
+A [Makefile](./Makefile) is a concise way to communicate what common terms like "linting" or "testing" mean exactly. 
+For example, testing isn't just "go test", it's "go test on all files with the -race detector". Similarly, linting isn't
+just "running go vet", it may be "running golangci-lint with some flags".  Makefile targets should be common software
+terms like "build" or "test" that contain specific commands for what that term means.
 
 ## Continuous testing
 
@@ -79,6 +79,11 @@ talked about why on a previous post
 [The 13 Things That Make a Good Build System](https://www.signalfx.com/blog/the-13-things-that-make-a-good-build-system/).
 An important bonus for me is that CircleCI is free for private git repositories, which lets me test out code before I'm
 ready to make it public.
+
+I purposly keep commands inside CI systems simple, like `make XYZ`, instead of embedding the command, like
+`go test -v -race ./...`, because I feel depending upon a common standard like a Makefile makes it easier to later
+switch CI systems.  The more complex your CI system's commands become, the more difficult it is to debug the system
+locally or migrate to another CI provider.
 
 ## Static analysis
 
