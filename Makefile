@@ -1,3 +1,6 @@
+# https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html
+.PHONY: build test test_coverage codecov_coverage format lint bench setup_ci
+
 # Build code with readonly to verify go.mod is up to date in CI
 build:
 	go build -mod=readonly ./...
