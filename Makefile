@@ -32,7 +32,7 @@ bench:
 
 # The exact version of CI tools should be specified in your go.mod file and referenced inside your tools.go file
 setup_ci:
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint
+	go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.17.1
 
 ## ---- Delete this part after cloning ---- ####
 # Use like `make setup_repo OWNER=example REPO=myproject`

@@ -12,6 +12,8 @@ jobs:
           keys:
             # Keys should be of a format (thing)-(cache_version)-(hash)
             # This is thing="go modules" cache_version="1" and hash "checksum of go.sum file"
+            # We checksum the makefile since we put our version of golangci-lint inside there, rather than use tools.go
+            - go-mod-v1-sum-{{ checksum "go.sum" }}-{{ checksum "Makefile" }}
             - go-mod-v1-sum-{{ checksum "go.sum" }}
             - go-mod-v1-sum-
       - run: go mod download
@@ -20,7 +22,7 @@ jobs:
       - run: make setup_ci lint
       - run: make codecov_coverage
       - save_cache:
-          key: go-mod-v1-sum-{{ checksum "go.sum" }}
+          key: go-mod-v1-sum-{{ checksum "go.sum" }}-{{ checksum "Makefile" }}
           paths:
             - "/go/pkg/mod"
   # Comments and rational for this build block are the same as the above
@@ -31,6 +33,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
+            - go-mod-v1-sum-{{ checksum "go.sum" }}-{{ checksum "Makefile" }}
             - go-mod-v1-sum-{{ checksum "go.sum" }}
             - go-mod-v1-sum-
       - run: go mod download
@@ -39,7 +42,7 @@ jobs:
       # Notice how we don't run linter on 1.11.  Some linters are picky about the format they expect for go 1.12 vs
       # go1.11.  So we lint against the latest go.
       - save_cache:
-          key: go-mod-v1-sum-{{ checksum "go.sum" }}
+          key: go-mod-v1-sum-{{ checksum "go.sum" }}-{{ checksum "Makefile" }}
           paths:
             - "/go/pkg/mod"
 workflows:
