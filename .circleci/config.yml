@@ -1,5 +1,28 @@
 version: 2.1
 jobs:
+  build_1_13:
+    docker:
+      # Find these on https://hub.docker.com/r/circleci/golang/
+      - image: circleci/golang:1.13.0
+    steps:
+      - checkout
+      # This step caches your modules directory.  Find out more about how to cache modules from
+      # https://circleci.com/blog/go-v1.11-modules-and-circleci/
+      - restore_cache:
+          keys:
+            # Keys should be of a format (thing)-(cache_version)-(hash)
+            # This is thing="go modules" cache_version="1" and hash "checksum of go.sum file"
+            - go-mod-v1-sum-{{ checksum "go.sum" }}
+            - go-mod-v1-sum-
+      - run: go mod download
+      - run: go mod verify
+      - run: make build test
+      - run: make setup_ci lint
+      - run: make codecov_coverage
+      - save_cache:
+          key: go-mod-v1-sum-{{ checksum "go.sum" }}
+          paths:
+            - "/go/pkg/mod"
   build_1_12:
     docker:
       # Find these on https://hub.docker.com/r/circleci/golang/
@@ -17,8 +40,6 @@ jobs:
       - run: go mod download
       - run: go mod verify
       - run: make build test
-      - run: make setup_ci lint
-      - run: make codecov_coverage
       - save_cache:
           key: go-mod-v1-sum-{{ checksum "go.sum" }}
           paths:
@@ -48,3 +69,4 @@ workflows:
     jobs:
       - build_1_11
       - build_1_12
+      - build_1_13
